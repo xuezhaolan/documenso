@@ -176,7 +176,7 @@ docker run -d \
   -e MINIO_ROOT_USER=minioadmin \
   -e MINIO_ROOT_PASSWORD=minioadmin \
   -v minio_data:/data \
-  minio/minio server /data --console-address ":9001"
+  quay.io/minio/minio server /data --console-address ":9001"
 ```
 
 Using Docker Compose with Documenso:
@@ -184,7 +184,7 @@ Using Docker Compose with Documenso:
 ```yaml
 services:
   minio:
-    image: minio/minio
+    image: quay.io/minio/minio
     command: server /data --console-address ":9001"
     ports:
       - '9000:9000'
